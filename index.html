@@ -5,406 +5,602 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN46JLLP0X"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-GN46JLLP0X');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GN46JLLP0X');
 </script>
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Email Campaign</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Email Campaign</title>
 
-<meta property="og:title" content="UK email campaign">
-<meta property="og:description" content="Send email to UK parliament members">
-<meta property="og:image" content="https://LionSunRevolution2026.github.io/FreeIran-UK/UK.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://LionSunRevolution2026.github.io/FreeIran-UK/">
+  <meta property="og:title" content="UK email campaign">
+  <meta property="og:description" content="Send email to UK parliament members">
+  <meta property="og:image" content="https://LionSunRevolution2026.github.io/FreeIran-UK/UK.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://LionSunRevolution2026.github.io/FreeIran-UK/">
 
-<style>
-:root{
---bg0:#07131c; --bg1:#071a26; --bg2:#061018;
---card0:#0e2533; --card1:#0b1f2c;
---border:rgba(255,255,255,.10);
---text:#e8f2ff;
---muted:rgba(232,242,255,.78);
---accent:#e07a5f;
---info0:rgba(224,122,95,.10);
---info1:rgba(224,122,95,.25);
---inputBg:rgba(255,255,255,.06);
-}
+  <style>
+    :root{
+      --bg0:#07131c; --bg1:#071a26; --bg2:#061018;
+      --card0:#0e2533; --card1:#0b1f2c;
+      --border:rgba(255,255,255,.10);
+      --text:#e8f2ff;
+      --muted:rgba(232,242,255,.78);
+      --accent:#e07a5f;
+      --info0:rgba(224,122,95,.10);
+      --info1:rgba(224,122,95,.25);
+      --inputBg:rgba(255,255,255,.06);
+    }
 
-*{box-sizing:border-box}
+    *{box-sizing:border-box}
 
-body{
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-max-width:980px;
-margin:34px auto;
-padding:0 16px 30px;
-line-height:1.6;
-color:var(--text);
-background:
-radial-gradient(1200px 700px at 20% 10%, rgba(47,192,214,.10), transparent 55%),
-radial-gradient(900px 600px at 80% 0%, rgba(60,120,255,.10), transparent 50%),
-linear-gradient(180deg, var(--bg1), var(--bg0) 55%, var(--bg2));
-}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      max-width:980px;
+      margin:34px auto;
+      padding:0 16px 30px;
+      line-height:1.6;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(47,192,214,.10), transparent 55%),
+        radial-gradient(900px 600px at 80% 0%, rgba(60,120,255,.10), transparent 50%),
+        linear-gradient(180deg, var(--bg1), var(--bg0) 55%, var(--bg2));
+    }
 
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;}
-.titleRow{display:flex;align-items:center;gap:12px;}
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:14px;
+    }
 
-.badgeIcon{
-width:55px;height:55px;font-size:35px;border-radius:12px;
-display:inline-flex;align-items:center;justify-content:center;
-background:rgba(255,255,255,.06);
-border:1px solid var(--border);
-box-shadow:0 10px 24px rgba(0,0,0,.35);
-}
+    .titleRow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-h1{margin:0;font-size:32px;letter-spacing:.2px}
-.subtitle{margin:4px 0 0;color:var(--muted);white-space:pre-line}
+    .badgeIcon{
+      width:55px;
+      height:55px;
+      font-size:35px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+    }
 
-button{
-display:inline-flex;align-items:center;justify-content:center;
-padding:12px 14px;border-radius:14px;
-border:1px solid rgba(255,255,255,.14);
-background:rgba(255,255,255,.06);
-color:#fff;font-weight:800;cursor:pointer;
-}
+    h1{margin:0;font-size:32px;letter-spacing:.2px}
+    .subtitle{margin:4px 0 0;color:var(--muted);white-space:pre-line}
 
-button:disabled{opacity:.5;cursor:not-allowed}
+    button, a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+      text-decoration:none;
+      transition:transform .05s ease, background .2s ease;
+      user-select:none;
+    }
 
-.langBtn{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.04);}
+    button:active{transform:translateY(1px)}
+    button:disabled{opacity:.5;cursor:not-allowed}
 
-.card{
-background:
-linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
-linear-gradient(180deg, var(--card0), var(--card1));
-border:1px solid var(--border);
-border-radius:22px;padding:16px;margin:14px 0;
-box-shadow:0 22px 60px rgba(0,0,0,.55),0 1px 0 rgba(255,255,255,.05) inset;
-}
+    .langBtn{
+      padding:10px 12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+    }
 
-.emailTextCard pre{
-margin:10px 0 0;
-white-space:pre-wrap;
-background:rgba(0,0,0,.18);
-border:1px solid rgba(255,255,255,.10);
-border-radius:14px;
-padding:14px;
-color:rgba(232,242,255,.94);
-line-height:1.7;
-}
+    .card{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
+        linear-gradient(180deg, var(--card0), var(--card1));
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:16px;
+      margin:14px 0;
+      box-shadow:
+        0 22px 60px rgba(0,0,0,.55),
+        0 1px 0 rgba(255,255,255,.05) inset;
+    }
 
-.signatureCard{background:var(--info0);border:1px solid var(--info1);}
-.signatureTitle{margin:0 0 8px;font-size:20px;}
-.signatureText{color:var(--muted);margin:0 0 12px;white-space:pre-line;}
+    .emailTextCard pre{
+      margin:10px 0 0;
+      white-space:pre-wrap;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:14px;
+      color:rgba(232,242,255,.94);
+      font-family:inherit;
+      line-height:1.7;
+    }
 
-.inputWrap{display:flex;flex-direction:column;gap:8px;}
-.label{font-weight:700;}
+    .signatureCard{
+      background:var(--info0);
+      border:1px solid var(--info1);
+    }
 
-.nameInput{
-width:100%;
-padding:14px 16px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,.14);
-background:var(--inputBg);
-color:var(--text);
-font-size:16px;
-outline:none;
-}
+    .signatureTitle{
+      margin:0 0 8px;
+      font-size:20px;
+    }
 
-.nameInput::placeholder{color:rgba(232,242,255,.45);}
-.inputHint{color:var(--muted);font-size:.95rem;margin:0;}
+    .signatureText{
+      color:var(--muted);
+      margin:0 0 12px;
+      white-space:pre-line;
+    }
 
-.panel{
-border-radius:22px;
-padding:16px;
-border:1px solid var(--border);
-background:rgba(255,255,255,.03);
-position:relative;
-overflow:hidden;
-box-shadow:0 18px 44px rgba(0,0,0,.42);
-margin-top:14px;
-}
+    .inputWrap{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
 
-.panelHeader{display:flex;justify-content:space-between;align-items:flex-start;}
+    .label{
+      font-weight:700;
+    }
 
-.panelTitle{margin:0;font-size:22px;}
+    .nameInput{
+      width:100%;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:var(--inputBg);
+      color:var(--text);
+      font-size:16px;
+      outline:none;
+    }
 
-.sendBtn{
-width:100%;
-padding:14px;
-border-radius:16px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.16);
-font-size:16px;
-}
+    .nameInput::placeholder{
+      color:rgba(232,242,255,.45);
+    }
 
-.mono{
-font-family:ui-monospace,Menlo,Consolas,monospace;
-word-break:break-word;
-}
+    .inputHint{
+      color:var(--muted);
+      font-size:.95rem;
+      margin:0;
+    }
 
-pre.mono{
-white-space:pre-wrap;
-background:rgba(0,0,0,.22);
-border:1px solid rgba(255,255,255,.10);
-border-radius:14px;
-padding:12px;
-margin:10px 0 0;
-}
+    .panel{
+      border-radius:22px;
+      padding:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 18px 44px rgba(0,0,0,.42);
+      margin-top:14px;
+    }
 
-.files{margin-top:10px;color:var(--muted);font-size:.95rem}
+    .panel::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      opacity:.22;
+      background: radial-gradient(900px 320px at 0% 0%, var(--accent), transparent 55%);
+      pointer-events:none;
+    }
 
-</style>
+    .panelHeader{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:10px;
+      position:relative;
+    }
+
+    .panelTitle{margin:0;font-size:22px;line-height:1.25}
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.15);
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 3px rgba(255,255,255,.06);
+    }
+
+    .meta{margin:10px 0 12px;color:var(--muted);position:relative}
+
+    .sendBox{
+      position:relative;
+      border-radius:18px;
+      padding:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
+    }
+
+    .sendBtn{
+      width:100%;
+      padding:14px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:16px;
+    }
+
+    .statusLine{margin-top:10px;color:var(--muted)}
+    .bullets{margin:10px 0 0 18px;color:var(--muted)}
+    .bullets li{margin:6px 0}
+
+    details{margin-top:10px}
+    details summary{cursor:pointer;font-weight:900}
+
+    .mono{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      unicode-bidi:plaintext;
+      word-break:break-word;
+    }
+
+    pre.mono{
+      white-space:pre-wrap;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:12px;
+      margin:10px 0 0;
+      color:rgba(232,242,255,.92);
+    }
+
+    .files{margin-top:10px;color:var(--muted);font-size:.95rem}
+    .error{color:#ffb4b4}
+
+    @media (max-width:700px){
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topbar">
-<div class="titleRow">
-<div class="badgeIcon">🕊️</div>
-<div>
-<h1 id="pageTitle"></h1>
-<div class="subtitle" id="pageSubtitle"></div>
-</div>
-</div>
-<button id="langBtn" class="langBtn" type="button"></button>
-</div>
+  <div class="topbar">
+    <div class="titleRow">
+      <div class="badgeIcon">🕊️</div>
+      <div>
+        <h1 id="pageTitle"></h1>
+        <div class="subtitle" id="pageSubtitle"></div>
+      </div>
+    </div>
+    <button id="langBtn" class="langBtn" type="button"></button>
+  </div>
 
-<div class="card emailTextCard">
-<h2 id="aboutTitle"></h2>
-<pre id="aboutText"></pre>
-</div>
+  <div class="card emailTextCard">
+    <h2 id="aboutTitle"></h2>
+    <pre id="aboutText"></pre>
+  </div>
 
-<div class="card signatureCard">
-<h2 class="signatureTitle" id="signatureTitle"></h2>
-<p class="signatureText" id="signatureNote"></p>
+  <div class="card signatureCard">
+    <h2 class="signatureTitle" id="signatureTitle"></h2>
+    <p class="signatureText" id="signatureNote"></p>
 
-<div class="inputWrap">
-<label class="label" id="nameLabel" for="fullName"></label>
-<input id="fullName" class="nameInput" type="text" autocomplete="name"/>
-<p class="inputHint" id="nameHint"></p>
-</div>
-</div>
+    <div class="inputWrap">
+      <label class="label" id="nameLabel" for="fullName"></label>
+      <input id="fullName" class="nameInput" type="text" autocomplete="name" />
+      <p class="inputHint" id="nameHint"></p>
+    </div>
+  </div>
 
-<section class="panel">
+  <section class="panel">
+    <div class="panelHeader">
+      <div>
+        <h2 class="panelTitle" id="panelTitle"></h2>
+        <div class="meta" id="panelMeta"></div>
+      </div>
+      <div class="pill"><span class="dot"></span><span id="pillLabel"></span></div>
+    </div>
 
-<h2 class="panelTitle" id="panelTitle"></h2>
+    <div class="sendBox">
+      <button class="sendBtn" id="sendBtn" disabled></button>
 
-<button class="sendBtn" id="sendBtn" disabled></button>
+      <div class="statusLine">
+        <span id="statusLabel"></span>
+        <span id="status">—</span>
+        <span id="error" class="error"></span>
+      </div>
 
-<div>
-<b id="previewSubjectLabel"></b>
-<span class="mono" id="previewSubject"></span>
-</div>
+      <ul class="bullets" id="bullets"></ul>
 
-<pre class="mono" id="previewBody"></pre>
+      <details>
+        <summary id="previewSummary"></summary>
+        <div class="statusLine"><b id="previewSubjectLabel"></b> <span class="mono" id="previewSubject"></span></div>
+        <pre class="mono" id="previewBody"></pre>
+      </details>
 
-<div class="files" id="files"></div>
-
-</section>
+      <div class="files" id="files"></div>
+    </div>
+  </section>
 
 <script>
+  let LANG = "fa";
 
-let LANG="fa"
+  const UI = {
+    fa: {
+      dir:"rtl",
+      title:"کمپین ایمیل بریتانیا",
+      subtitle:"با یک کلیک، پیش‌نویس آماده در برنامه ایمیل شما باز می‌شود.\nاولین گیرنده در قسمت To قرار می‌گیرد و بقیه گیرندگان در Bcc هستند.",
+      aboutTitle:"ترجمه متن ایمیل",
+      aboutText:`موضوع: آزادی و دموکراسی برای ایران
 
-const UI={
-
-fa:{
-dir:"rtl",
-title:"کمپین ایمیل بریتانیا",
-subtitle:"با یک کلیک پیش‌نویس ایمیل باز می‌شود.\nاولین گیرنده در To و بقیه در Bcc قرار می‌گیرند.",
-
-aboutTitle:"ترجمه متن ایمیل",
-
-aboutText:`موضوع: آزادی و دموکراسی برای ایران
-
+متن:
 نمایندگان محترم پارلمان،
-تصمیم‌گیرندگان گرامی،
+مسئولان تصمیم‌گیرنده محترم،
 
-به عنوان شهروندی با ریشه ایرانی که در بریتانیا زندگی می‌کنم، با یک درخواست سیاسی مهم با شما تماس می‌گیرم.
+به‌عنوان یک شهروند ایرانی‌تبار مقیم بریتانیا، با یک موضوع سیاسی فوری خدمت شما نامه می‌نویسم.
 
-با توجه به تلاش‌های مستمر مردم ایران برای دستیابی به آزادی و حاکمیت قانون، از شما درخواست می‌کنم که از این روند تاریخی گذار تا پایان کامل جمهوری اسلامی به طور قاطع و بدون کاهش حمایت کنید.
+با توجه به تلاش‌های مداوم مردم ایران برای آزادی و حاکمیت قانون، خواستار حمایت قاطع و مستمر از این تحول تاریخی تا سقوط کامل جمهوری اسلامی هستم.
 
-در عین حال بر حفظ کامل تمامیت ارضی ایران تأکید می‌کنم.
+در این راستا، بر تمامیت ارضی ایران به‌طور مطلق تأکید می‌کنم. هر نظم حکومتی آینده باید بر پایه اراده‌ی مستقل مردم ایران باشد و مطابق با استانداردهای حقوق بین‌الملل عمل کند.
 
-برای تضمین یک دوره گذار پایدار و جلوگیری از خلأ قدرت، نقش محوری شاهزاده رضا پهلوی در هدایت گذار دموکراتیک بسیار مهم است.
+برای تضمین یک دوره گذار پایدار و جلوگیری از ایجاد خلأ قدرت، نقش مرکزی و هماهنگ‌کنندهٔ شاهزاده رضا پهلوی به‌عنوان رهبر مشروع یک دولت انتقالی را صریحاً برجسته می‌کنم. رهبری او برای نمایندگی اراده مردم ایران و تضمین گذار دموکراتیک حیاتی است.
+ایرانیان، همان‌طور که در سال‌های گذشته و به‌ویژه در دو ماه اخیر در اعتراضات داخلی و جهانی نشان داده‌اند، از رهبری شاهزاده رضا پهلوی و تیم ایشان حمایت می‌کنند و پشت او و برنامه‌هایش برای تغییر و اصلاحات دموکراتیک متحد شده‌اند.
 
-از شما درخواست می‌کنم در چارچوب مسئولیت‌های خود از آزادی، حقوق بشر و آرمان‌های دموکراتیک مردم ایران حمایت کنید.`,
+از شما درخواست می‌کنم که در چارچوب مأموریت خود تلاش کنید تا پادشاهی متحد بریتانیا موضع سیاسی روشنی اتخاذ کرده و آزادی، حقوق بشر و تلاش‌های دموکراتیک مردم ایران را حمایت کند.
 
-signatureTitle:"امضای شما",
+با احترام،
 
-signatureNote:
-"لطفاً نام خود را برای امضا وارد کنید تا به ایمیل اعتبار بیشتری بدهد.\nما هیچ‌کدام از این اطلاعات را ذخیره نمی‌کنیم.\nمی‌توانید متن ایمیل را کمی تغییر دهید تا کاملاً تکراری نباشد.\nاگر برای کشورهای دیگر هم به این پلتفرم نیاز دارید به ما اطلاع دهید.",
+{امضا}`,
+      signatureTitle:"امضای شما",
+      signatureNote:"لطفاً نام خود را برای امضا وارد کنید تا به ایمیل ارزش و اعتبار بیشتری بدهد.\nما هیچ‌یک از این اطلاعات را در هیچ جایی ذخیره نمی‌کنیم، بنابراین نام شما محفوظ می‌ماند.\nدر صورت تمایل می‌توانید متن ایمیل را کمی تغییر دهید تا کاملاً تکراری نباشد.\nاگر برای کشورهای دیگر هم به این پلتفرم نیاز دارید، به ما اطلاع دهید.",
+      nameLabel:"نام کامل",
+      namePlaceholder:"نام خود را اینجا بنویسید",
+      nameHint:"این قسمت اختیاری است.",
+      toggle:"🌐 EN",
 
-nameLabel:"نام کامل",
-namePlaceholder:"نام خود را اینجا بنویسید",
-nameHint:"این قسمت اختیاری است.",
+      panelTitle:"ارسال ایمیل به اعضای پارلمان بریتانیا",
+      panelGroup:"پارلمان بریتانیا",
+      panelMeta:"گیرندگان: لیست ایمیل ۱ • متن: پیام ۱",
+      sendBtn:"✅ ارسال ایمیل",
+      statusLabel:"وضعیت: ",
+      loaded:(n)=>`بارگذاری شد: ${n} ایمیل`,
+      bullets:[
+        "پیش‌نویس ایمیل با گیرندگان آماده می‌شود.",
+        "اولین گیرنده در To و بقیه در Bcc قرار می‌گیرند.",
+        "در صورت وارد کردن نام، نام شما در پایان ایمیل اضافه می‌شود."
+      ],
+      previewSummary:"نمایش موضوع و متن ایمیل",
+      subjectLabel:"موضوع:",
+      files:"فایل‌ها: mail1.txt + message1.txt",
+      dash:"—",
+      errorPrefix:"خطا: "
+    },
 
-toggle:"🌐 EN",
+    en: {
+      dir:"ltr",
+      title:"UK email campaign",
+      subtitle:"One click opens a ready draft in your email app.\nThe first recipient is placed in the To field and the remaining recipients are included in the Bcc field.",
+      aboutTitle:"Translation of the email message",
+      aboutText:`Subject: Freedom and democracy for Iran
 
-panelTitle:"ارسال ایمیل به اعضای پارلمان بریتانیا",
-
-sendBtn:"ارسال ایمیل",
-
-subjectLabel:"موضوع:"
-
-},
-
-en:{
-dir:"ltr",
-
-title:"UK email campaign",
-
-subtitle:
-"One click opens a ready email draft.\nThe first recipient goes to To and the others to Bcc.",
-
-aboutTitle:"Translation of the email message",
-
-aboutText:`Subject: Freedom and democracy for Iran
+Body:
 
 Dear Members of Parliament,
-Dear Decision Makers,
+Dear Decision-Makers,
 
-As a citizen of Iranian origin residing in the United Kingdom, I am writing with an urgent political request.
+As a citizen of Iranian origin residing in the United Kingdom, I am writing to you with an urgent political request. In light of the continued efforts of the Iranian people to achieve freedom and the rule of law, I call for consistent and unwavering support for this historic transformation process until the complete end of the Islamic Republic.
 
-In light of the continued efforts of the Iranian people for freedom and the rule of law, I call for clear and consistent support for this historic democratic transition until the complete end of the Islamic Republic.
+At the same time, I emphasize the absolute inviolability of Iran’s territorial integrity. Any future political order must be based on the sovereign will of the Iranian people and comply with international legal standards.
 
-Iran’s territorial integrity must remain intact and any future political system must reflect the sovereign will of the Iranian people.
+To ensure a stable transition period and to prevent a power vacuum, I emphasize the central and coordinating role of Crown Prince Reza Pahlavi as the legitimate leader of a transitional administration. His leadership is essential to represent the will of the Iranian people and to guide the democratic transition safely. As Iranians have demonstrated over the past years, and particularly in the past two months during protests both inside and outside the country, they support the leadership of Prince Reza Pahlavi and his team and stand united behind him and his plans for democratic change and reform.
 
-Many Iranians support Crown Prince Reza Pahlavi as a central figure in guiding a democratic transition.
+I respectfully urge you, within the scope of your mandate, to ensure that the United Kingdom adopts a clear political stance and supports the freedom, human rights, and democratic aspirations of the Iranian people.
 
-I respectfully urge the United Kingdom to support the freedom, human rights, and democratic aspirations of the Iranian people.`,
+Sincerely`,
+      signatureTitle:"Your signature",
+      signatureNote:"Please write your name for the signature to give more value to the email.\nWe do not save any of this data or your name anywhere, so you will be safe.\nFeel free to slightly change the email so it is not fully repetitive.\nIf you need to use this platform for other countries as well, please let us know.",
+      nameLabel:"Full name",
+      namePlaceholder:"Write your name here",
+      nameHint:"This field is optional.",
+      toggle:"🌐 FA",
 
-signatureTitle:"Your signature",
+      panelTitle:"Send email to members of the UK Parliament",
+      panelGroup:"UK Parliament",
+      panelMeta:"Recipients: email list 1 • Text: message 1",
+      sendBtn:"✅ Send email",
+      statusLabel:"Status: ",
+      loaded:(n)=>`Loaded: ${n} emails`,
+      bullets:[
+        "A draft email with recipients is prepared.",
+        "The first recipient goes in To and the rest go in Bcc.",
+        "If a name is entered, it is added at the end of the email."
+      ],
+      previewSummary:"Show subject and body",
+      subjectLabel:"Subject:",
+      files:"Files: mail1.txt + message1.txt",
+      dash:"—",
+      errorPrefix:"Error: "
+    }
+  };
 
-signatureNote:
-"Please write your name for the signature to give more value to the email.\nWe do not store your name or any data anywhere.\nFeel free to slightly adjust the email text so messages are not completely identical.\nIf you would like to use this platform for other countries, please let us know.",
+  const PANEL = {
+    mailFile:"mail1.txt",
+    msgFile:"message1.txt",
+    emails:[],
+    subject:"",
+    body:"",
+    loaded:false,
+    error:""
+  };
 
-nameLabel:"Full name",
-namePlaceholder:"Write your name here",
-nameHint:"This field is optional.",
+  function setLang(lang){
+    LANG = lang;
+    const t = UI[LANG];
 
-toggle:"🌐 FA",
+    document.documentElement.lang = LANG;
+    document.documentElement.dir = t.dir;
+    document.title = t.title;
 
-panelTitle:"Send email to members of the UK Parliament",
+    document.getElementById("pageTitle").textContent = t.title;
+    document.getElementById("pageSubtitle").textContent = t.subtitle;
+    document.getElementById("aboutTitle").textContent = t.aboutTitle;
+    document.getElementById("aboutText").textContent = t.aboutText;
+    document.getElementById("signatureTitle").textContent = t.signatureTitle;
+    document.getElementById("signatureNote").textContent = t.signatureNote;
+    document.getElementById("nameLabel").textContent = t.nameLabel;
+    document.getElementById("fullName").placeholder = t.namePlaceholder;
+    document.getElementById("nameHint").textContent = t.nameHint;
+    document.getElementById("langBtn").textContent = t.toggle;
 
-sendBtn:"Send email",
+    document.getElementById("panelTitle").textContent = t.panelTitle;
+    document.getElementById("pillLabel").textContent = t.panelGroup;
+    document.getElementById("panelMeta").textContent = t.panelMeta;
+    document.getElementById("sendBtn").textContent = t.sendBtn;
+    document.getElementById("statusLabel").textContent = t.statusLabel;
+    document.getElementById("previewSummary").textContent = t.previewSummary;
+    document.getElementById("previewSubjectLabel").textContent = t.subjectLabel;
+    document.getElementById("files").textContent = t.files;
 
-subjectLabel:"Subject:"
+    renderPanel();
+  }
 
-}
+  document.getElementById("langBtn").addEventListener("click", () => {
+    const next = (LANG === "fa") ? "en" : "fa";
+    setLang(next);
+  });
 
-}
+  document.getElementById("fullName").addEventListener("input", () => {
+    renderPanel();
+  });
 
-const PANEL={mailFile:"mail1.txt",msgFile:"message1.txt",emails:[],subject:"",body:"",loaded:false}
+  function normalizeEmails(text){
+    return text
+      .split(/\r?\n/)
+      .map(l => l.trim())
+      .filter(Boolean)
+      .filter(l => !l.startsWith("#"));
+  }
 
-function setLang(lang){
+  function parseMessage(text){
+    const subjectLine = text.match(/^SUBJECT:\s*(.*)$/m);
+    const bodySplit = text.split(/^\s*BODY:\s*$/m);
 
-LANG=lang
-const t=UI[lang]
+    const subject = subjectLine ? subjectLine[1].trim() : "";
+    const body = (bodySplit.length > 1) ? bodySplit.slice(1).join("\n").trim() : "";
+    return { subject, body };
+  }
 
-document.documentElement.dir=t.dir
-document.title=t.title
+  function getSignedBody(body){
+    const name = document.getElementById("fullName").value.trim();
+    if(!name) return body || "";
+    const safeBody = body || "";
+    return `${safeBody}\n\n${name}`;
+  }
 
-pageTitle.textContent=t.title
-pageSubtitle.textContent=t.subtitle
-aboutTitle.textContent=t.aboutTitle
-aboutText.textContent=t.aboutText
+  function buildMailto(emails, subject, body){
+    const to = emails[0] || "";
+    const bccList = emails.slice(1);
 
-signatureTitle.textContent=t.signatureTitle
-signatureNote.textContent=t.signatureNote
-nameLabel.textContent=t.nameLabel
-fullName.placeholder=t.namePlaceholder
-nameHint.textContent=t.nameHint
+    const toEncoded = encodeURIComponent(to);
+    const bccEncoded = encodeURIComponent(bccList.join(","));
+    const s = encodeURIComponent(subject || "");
+    const b = encodeURIComponent(body || "");
 
-panelTitle.textContent=t.panelTitle
-sendBtn.textContent=t.sendBtn
+    let url = `mailto:${toEncoded}?subject=${s}&body=${b}`;
 
-previewSubjectLabel.textContent=t.subjectLabel
+    if (bccList.length > 0) {
+      url += `&bcc=${bccEncoded}`;
+    }
 
-langBtn.textContent=t.toggle
+    return url;
+  }
 
-}
+  function setPanelError(msg){
+    PANEL.error = msg;
+    const errEl = document.getElementById("error");
+    errEl.textContent = msg ? (" — " + msg) : "";
+  }
 
-langBtn.onclick=()=>{
+  function renderPanel(){
+    const t = UI[LANG];
+    const finalBody = getSignedBody(PANEL.body);
 
-if(LANG==="fa") setLang("en")
-else setLang("fa")
+    document.getElementById("status").textContent = PANEL.loaded ? t.loaded(PANEL.emails.length || 0) : t.loaded(0);
 
-}
+    const ul = document.getElementById("bullets");
+    ul.innerHTML = "";
+    for(const line of t.bullets){
+      const li = document.createElement("li");
+      li.textContent = line;
+      ul.appendChild(li);
+    }
 
-function normalizeEmails(text){
-return text.split(/\r?\n/).map(l=>l.trim()).filter(Boolean)
-}
+    document.getElementById("previewSubject").textContent = PANEL.subject || t.dash;
+    document.getElementById("previewBody").textContent = finalBody || t.dash;
 
-function parseMessage(text){
-const subjectLine=text.match(/^SUBJECT:\s*(.*)$/m)
-const bodySplit=text.split(/^\s*BODY:\s*$/m)
-return{
-subject:subjectLine?subjectLine[1].trim():"",
-body:bodySplit.length>1?bodySplit.slice(1).join("\n").trim():""
-}
-}
+    const ready = PANEL.loaded && PANEL.emails.length > 0 && (PANEL.subject.length > 0 || PANEL.body.length > 0) && !PANEL.error;
+    document.getElementById("sendBtn").disabled = !ready;
+  }
 
-function getSignedBody(body){
-const name=fullName.value.trim()
-if(!name) return body
-return body+"\n\n"+name
-}
+  async function loadPanel(){
+    setPanelError("");
 
-function buildMailto(emails,subject,body){
+    try{
+      const [mailRes, msgRes] = await Promise.all([
+        fetch(PANEL.mailFile, { cache:"no-store" }),
+        fetch(PANEL.msgFile, { cache:"no-store" })
+      ]);
 
-const to=emails[0]||""
-const bcc=emails.slice(1).join(",")
+      if(!mailRes.ok) throw new Error(`${PANEL.mailFile} not found`);
+      if(!msgRes.ok) throw new Error(`${PANEL.msgFile} not found`);
 
-let url=`mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      const [mailTxt, msgTxt] = await Promise.all([mailRes.text(), msgRes.text()]);
 
-if(bcc) url+=`&bcc=${encodeURIComponent(bcc)}`
+      PANEL.emails = normalizeEmails(mailTxt);
+      const parsed = parseMessage(msgTxt);
+      PANEL.subject = parsed.subject;
+      PANEL.body = parsed.body;
+      PANEL.loaded = true;
 
-return url
-}
+      renderPanel();
+    }catch(e){
+      PANEL.loaded = false;
+      PANEL.emails = [];
+      PANEL.subject = "";
+      PANEL.body = "";
+      setPanelError(UI[LANG].errorPrefix + e.message);
+      renderPanel();
+    }
+  }
 
-async function loadPanel(){
+  document.getElementById("sendBtn").addEventListener("click", () => {
+    if(!PANEL.loaded || !PANEL.emails.length) return;
+    const finalBody = getSignedBody(PANEL.body);
+    window.location.href = buildMailto(PANEL.emails, PANEL.subject, finalBody);
+  });
 
-const [mailRes,msgRes]=await Promise.all([
-fetch(PANEL.mailFile),
-fetch(PANEL.msgFile)
-])
-
-const mailTxt=await mailRes.text()
-const msgTxt=await msgRes.text()
-
-PANEL.emails=normalizeEmails(mailTxt)
-
-const parsed=parseMessage(msgTxt)
-
-PANEL.subject=parsed.subject
-PANEL.body=parsed.body
-
-previewSubject.textContent=PANEL.subject
-previewBody.textContent=PANEL.body
-
-sendBtn.disabled=false
-
-}
-
-sendBtn.onclick=()=>{
-
-const finalBody=getSignedBody(PANEL.body)
-
-window.location.href=buildMailto(
-PANEL.emails,
-PANEL.subject,
-finalBody
-)
-
-}
-
-setLang("fa")
-loadPanel()
-
+  (async function init(){
+    setLang("fa");
+    await loadPanel();
+    renderPanel();
+  })();
 </script>
 
 </body>
