@@ -28,9 +28,9 @@
       --border:rgba(255,255,255,.10);
       --text:#e8f2ff;
       --muted:rgba(232,242,255,.78);
-      --accent:#e07a5f;
-      --info0:rgba(224,122,95,.10);
-      --info1:rgba(224,122,95,.25);
+      --accent:#6fcf97;
+      --info0:rgba(111,207,151,.10);
+      --info1:rgba(111,207,151,.25);
       --inputBg:rgba(255,255,255,.06);
     }
 
@@ -341,6 +341,12 @@
 
 <script>
   let LANG = "fa";
+  let nameInputTracked = false;
+
+  function trackEvent(eventName, params = {}) {
+    if (typeof gtag !== "function") return;
+    gtag("event", eventName, params);
+  }
 
   const UI = {
     fa: {
@@ -348,26 +354,29 @@
       title:"کمپین ایمیل بریتانیا",
       subtitle:"با یک کلیک، پیش‌نویس آماده در برنامه ایمیل شما باز می‌شود.\nاولین گیرنده در قسمت To قرار می‌گیرد و بقیه گیرندگان در Bcc هستند.",
       aboutTitle:"ترجمه متن ایمیل",
-      aboutText:`موضوع: آزادی و دموکراسی برای ایران
+      aboutText:`موضوع: درخواست از پارلمان بریتانیا: حمایت از مردم ایران، تمامیت ارضی ایران، و نقش شاهزاده رضا پهلوی
 
 متن:
-نمایندگان محترم پارلمان،
-مسئولان تصمیم‌گیرنده محترم،
 
-به‌عنوان یک شهروند ایرانی‌تبار مقیم بریتانیا، با یک موضوع سیاسی فوری خدمت شما نامه می‌نویسم.
+نمایندگان محترم پارلمان بریتانیا،
 
-با توجه به تلاش‌های مداوم مردم ایران برای آزادی و حاکمیت قانون، خواستار حمایت قاطع و مستمر از این تحول تاریخی تا سقوط کامل جمهوری اسلامی هستم.
+ما به‌عنوان شهروندان ایرانی و حامیان حقوق بشر، مقیم بریتانیا و اروپا، این نامه را برای جلب توجه شما به وضعیت مردم ایران و اهمیت اتخاذ موضعی روشن و منسجم از سوی بریتانیا می‌نویسیم.
 
-در این راستا، بر تمامیت ارضی ایران به‌طور مطلق تأکید می‌کنم. هر نظم حکومتی آینده باید بر پایه اراده‌ی مستقل مردم ایران باشد و مطابق با استانداردهای حقوق بین‌الملل عمل کند.
+مردم ایران شایسته آزادی، کرامت، و برخورداری کامل از حقوق بنیادین خود هستند. نزدیک به نیم قرن است که آنان زیر سرکوب جمهوری اسلامی زندگی کرده‌اند؛ نظامی که میلیون‌ها شهروند را از ابتدایی‌ترین آزادی‌هایشان محروم کرده است. در این مقطع تاریخی، ضروری است که بریتانیا به‌طور قاطع و بدون ابهام از مردم ایران در مبارزه‌شان برای پایان دادن به این رژیم حمایت کند.
 
-برای تضمین یک دوره گذار پایدار و جلوگیری از ایجاد خلأ قدرت، نقش مرکزی و هماهنگ‌کنندهٔ شاهزاده رضا پهلوی به‌عنوان رهبر مشروع یک دولت انتقالی را صریحاً برجسته می‌کنم. رهبری او برای نمایندگی اراده مردم ایران و تضمین گذار دموکراتیک حیاتی است.
-ایرانیان، همان‌طور که در سال‌های گذشته و به‌ویژه در دو ماه اخیر در اعتراضات داخلی و جهانی نشان داده‌اند، از رهبری شاهزاده رضا پهلوی و تیم ایشان حمایت می‌کنند و پشت او و برنامه‌هایش برای تغییر و اصلاحات دموکراتیک متحد شده‌اند.
+میلیون‌ها ایرانی، در داخل و خارج از کشور، خواهان پایان جمهوری اسلامی و ساختن ایرانی آزاد، دموکراتیک، و مبتنی بر حقوق بشر هستند. در این روند تاریخی، بسیاری از ایرانیان شاهزاده رضا پهلوی را تنها رهبری می‌دانند که از مشروعیت و اعتبار لازم برای نمایندگی اراده مردم ایران برخوردار است. نقش او در هدایت یک گذار مسالمت‌آمیز از جمهوری اسلامی به سوی یک نظام دموکراتیک که به‌طور مشروع توسط مردم انتخاب شود، از سوی اکثریت بسیار بزرگ ایرانیان دارای اهمیتی اساسی تلقی می‌شود.
 
-از شما درخواست می‌کنم که در چارچوب مأموریت خود تلاش کنید تا پادشاهی متحد بریتانیا موضع سیاسی روشنی اتخاذ کرده و آزادی، حقوق بشر و تلاش‌های دموکراتیک مردم ایران را حمایت کند.
+ما درخواست می‌کنیم که:
 
-با احترام،
+• بریتانیا همچنان از مردم ایران، از نظر سیاسی و اخلاقی، در آرمان آنان برای آزادی و پایان جمهوری اسلامی حمایت کند.
+• بر خدشه‌ناپذیری تمامیت ارضی ایران در همه مجامع ملی و بین‌المللی تأکید شود.
+• از اراده مشروع مردم ایران برای تعیین ساختار آینده نهادی و سیاسی کشورشان با قاطعیت حمایت شود.
+• نقش اساسی شاهزاده رضا پهلوی به‌عنوان شخصیتی محوری و رهبری شایسته برای هدایت گذار مسالمت‌آمیز از جمهوری اسلامی به سوی یک نظام دموکراتیکِ برگزیده مردم ایران به رسمیت شناخته شود.
+• در همه نهادهای رسمی، حداکثر حمایت از غیرنظامیان مورد پشتیبانی قرار گیرد و حفاظت از جمعیتی که در فعالیت‌های نظامی دخیل نیستند، به‌عنوان یک اولویت مطلق در نظر گرفته شود.
 
-{امضا}`,
+ما این درخواست را با احترام به ارزش‌های دموکراتیکی که بریتانیا را هدایت می‌کنند و در همسویی با آن‌ها مطرح می‌کنیم، و بر این باوریم که آزادی، حق تعیین سرنوشت، و حفاظت از غیرنظامیان اصولی جهان‌شمول هستند که باید در هر مکان و در هر چارچوب رسمی از آن‌ها دفاع شود.
+
+با احترام،`,
       signatureTitle:"امضای شما",
       signatureNote:"لطفاً نام خود را برای امضا وارد کنید تا به ایمیل ارزش و اعتبار بیشتری بدهد.\nما هیچ‌یک از این اطلاعات را در هیچ جایی ذخیره نمی‌کنیم، بنابراین نام شما محفوظ می‌ماند.\nدر صورت تمایل می‌توانید متن ایمیل را کمی تغییر دهید تا کاملاً تکراری نباشد.\nاگر برای کشورهای دیگر هم به این پلتفرم نیاز دارید، به ما اطلاع دهید.",
       nameLabel:"نام کامل",
@@ -383,7 +392,7 @@
       loaded:(n)=>`بارگذاری شد: ${n} ایمیل`,
       bullets:[
         "پیش‌نویس ایمیل با گیرندگان آماده می‌شود.",
-        "اولین گیرنده در To و بقیه در Bcc قرار می‌گیرند.",
+        "اولین گیرنده در To و بقیه گیرندگان در Bcc قرار می‌گیرند.",
         "در صورت وارد کردن نام، نام شما در پایان ایمیل اضافه می‌شود."
       ],
       previewSummary:"نمایش موضوع و متن ایمیل",
@@ -398,22 +407,29 @@
       title:"UK email campaign",
       subtitle:"One click opens a ready draft in your email app.\nThe first recipient is placed in the To field and the remaining recipients are included in the Bcc field.",
       aboutTitle:"Translation of the email message",
-      aboutText:`Subject: Freedom and democracy for Iran
+      aboutText:`Subject: Appeal to the UK Parliament: support for the Iranian people, Iran’s territorial integrity, and the role of Crown Prince Reza Pahlavi
 
 Body:
 
-Dear Members of Parliament,
-Dear Decision-Makers,
+Honourable Representatives of the UK Parliament,
 
-As a citizen of Iranian origin residing in the United Kingdom, I am writing to you with an urgent political request. In light of the continued efforts of the Iranian people to achieve freedom and the rule of law, I call for consistent and unwavering support for this historic transformation process until the complete end of the Islamic Republic.
+We write to you as Iranian citizens and supporters of human rights, residing in the United Kingdom and across Europe, to draw your attention to the situation of the Iranian people and to the importance of a clear and consistent position by the United Kingdom.
 
-At the same time, I emphasize the absolute inviolability of Iran’s territorial integrity. Any future political order must be based on the sovereign will of the Iranian people and comply with international legal standards.
+The Iranian people deserve freedom, dignity, and full recognition of their fundamental rights. For nearly half a century, they have lived under the repression of the Islamic Republic, a system that has deprived millions of citizens of their most basic freedoms. At this historic moment, it is essential that the United Kingdom firmly and unequivocally support the Iranian people in their struggle to bring this regime to an end.
 
-To ensure a stable transition period and to prevent a power vacuum, I emphasize the central and coordinating role of Crown Prince Reza Pahlavi as the legitimate leader of a transitional administration. His leadership is essential to represent the will of the Iranian people and to guide the democratic transition safely. As Iranians have demonstrated over the past years, and particularly in the past two months during protests both inside and outside the country, they support the leadership of Prince Reza Pahlavi and his team and stand united behind him and his plans for democratic change and reform.
+Millions of Iranians, both inside and outside the country, are calling for the end of the Islamic Republic and for the construction of a free, democratic Iran that respects human rights. In this historic process, many Iranians recognise Crown Prince Reza Pahlavi as the only leader with the legitimacy and credibility necessary to represent the will of the Iranian people. His role in guiding a peaceful transition from the Islamic Republic toward a democratic system, legitimately chosen by the people, is regarded by the vast majority of Iranians as fundamentally important.
 
-I respectfully urge you, within the scope of your mandate, to ensure that the United Kingdom adopts a clear political stance and supports the freedom, human rights, and democratic aspirations of the Iranian people.
+We ask that:
 
-Sincerely`,
+• The United Kingdom continue to support the Iranian people politically and morally in their aspiration for freedom and for the end of the Islamic Republic.
+• The inviolability of Iran’s territorial integrity be reaffirmed in all national and international forums.
+• Strong support be given to the legitimate will of the Iranian people to determine the future institutional and political structure of their country.
+• The fundamental role of Crown Prince Reza Pahlavi be recognised as a central figure and qualified leader to guide the peaceful transition from the Islamic Republic toward a democratic system chosen by the Iranian people.
+• Maximum protection of civilians be supported in every institutional forum, and that the protection of the population not involved in military activities be treated as an absolute priority.
+
+We make this appeal in respect for and in shared commitment to the democratic values that guide the United Kingdom, and in the conviction that freedom, self-determination, and the protection of civilians are universally recognised principles that must be defended in every place and official context.
+
+Respectfully,`,
       signatureTitle:"Your signature",
       signatureNote:"Please write your name for the signature to give more value to the email.\nWe do not save any of this data or your name anywhere, so you will be safe.\nFeel free to slightly change the email so it is not fully repetitive.\nIf you need to use this platform for other countries as well, please let us know.",
       nameLabel:"Full name",
@@ -482,11 +498,30 @@ Sincerely`,
   }
 
   document.getElementById("langBtn").addEventListener("click", () => {
+    const previousLang = LANG;
     const next = (LANG === "fa") ? "en" : "fa";
+
+    trackEvent("language_switch", {
+      event_category: "engagement",
+      event_label: "language button",
+      from_language: previousLang,
+      to_language: next,
+      page_name: "uk_campaign"
+    });
+
     setLang(next);
   });
 
-  document.getElementById("fullName").addEventListener("input", () => {
+  document.getElementById("fullName").addEventListener("input", (e) => {
+    if (!nameInputTracked && e.target.value.trim().length > 0) {
+      nameInputTracked = true;
+      trackEvent("name_input_started", {
+        event_category: "engagement",
+        event_label: "signature name input",
+        language: LANG,
+        page_name: "uk_campaign"
+      });
+    }
     renderPanel();
   });
 
@@ -579,6 +614,16 @@ Sincerely`,
       PANEL.body = parsed.body;
       PANEL.loaded = true;
 
+      trackEvent("page_ready", {
+        event_category: "page_state",
+        event_label: "uk campaign loaded",
+        language: LANG,
+        recipient_count: PANEL.emails.length,
+        has_subject: PANEL.subject ? 1 : 0,
+        has_body: PANEL.body ? 1 : 0,
+        page_name: "uk_campaign"
+      });
+
       renderPanel();
     }catch(e){
       PANEL.loaded = false;
@@ -586,14 +631,45 @@ Sincerely`,
       PANEL.subject = "";
       PANEL.body = "";
       setPanelError(UI[LANG].errorPrefix + e.message);
+
+      trackEvent("page_load_error", {
+        event_category: "page_state",
+        event_label: "uk campaign load error",
+        language: LANG,
+        error_message: String(e.message || "unknown error"),
+        page_name: "uk_campaign"
+      });
+
       renderPanel();
     }
   }
 
   document.getElementById("sendBtn").addEventListener("click", () => {
     if(!PANEL.loaded || !PANEL.emails.length) return;
+
     const finalBody = getSignedBody(PANEL.body);
-    window.location.href = buildMailto(PANEL.emails, PANEL.subject, finalBody);
+    const mailtoUrl = buildMailto(PANEL.emails, PANEL.subject, finalBody);
+
+    let navigated = false;
+    const openMailClient = () => {
+      if (navigated) return;
+      navigated = true;
+      window.location.href = mailtoUrl;
+    };
+
+    trackEvent("send_email_click", {
+      event_category: "email_campaign",
+      event_label: "UK Parliament Send Button",
+      language: LANG,
+      recipient_count: PANEL.emails.length,
+      has_name: document.getElementById("fullName").value.trim() ? 1 : 0,
+      page_name: "uk_campaign",
+      value: 1,
+      event_callback: openMailClient,
+      event_timeout: 1200
+    });
+
+    setTimeout(openMailClient, 1300);
   });
 
   (async function init(){
