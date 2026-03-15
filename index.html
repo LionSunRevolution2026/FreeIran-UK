@@ -226,7 +226,13 @@
       box-shadow:0 0 0 3px rgba(255,255,255,.06);
     }
 
-    .meta{margin:10px 0 12px;color:var(--muted);position:relative}
+    .meta{
+      margin:10px 0 12px;
+      color:#fff;
+      position:relative;
+      font-weight:900;
+      line-height:1.7;
+    }
 
     .sendBox{
       position:relative;
@@ -293,11 +299,6 @@
     <button id="langBtn" class="langBtn" type="button"></button>
   </div>
 
-  <div class="card emailTextCard">
-    <h2 id="aboutTitle"></h2>
-    <pre id="aboutText"></pre>
-  </div>
-
   <div class="card signatureCard">
     <h2 class="signatureTitle" id="signatureTitle"></h2>
     <p class="signatureText" id="signatureNote"></p>
@@ -338,6 +339,11 @@
       <div class="files" id="files"></div>
     </div>
   </section>
+
+  <div class="card emailTextCard">
+    <h2 id="aboutTitle"></h2>
+    <pre id="aboutText"></pre>
+  </div>
 
 <script>
   let LANG = "fa";
@@ -383,16 +389,16 @@
       namePlaceholder:"نام خود را اینجا بنویسید",
       nameHint:"این قسمت اختیاری است.",
       toggle:"🌐 EN",
+      panelMeta:(total,batch)=>`نکته مهم: در مجموع ${total} ایمیل بارگذاری شده است. هر بار فقط ${batch} گیرنده انتخاب می‌شود تا احتمال شناسایی به‌عنوان اسپم توسط سامانه‌های ایمیل کمتر شود. اگر این کار را چند بار تکرار کنید، در نهایت کل فهرست پوشش داده می‌شود. لطفاً هنگام ارسال صفحه را رفرش نکنید و نبندید، چون در غیر این صورت ترتیب دسته‌ها از ابتدا شروع می‌شود.`,
 
       panelTitle:"ارسال ایمیل به اعضای پارلمان بریتانیا",
       panelGroup:"پارلمان بریتانیا",
-      panelMeta:"گیرندگان: لیست ایمیل ۱ • متن: پیام ۱",
       sendBtn:"✅ ارسال ایمیل",
       statusLabel:"وضعیت: ",
       loaded:(n)=>`بارگذاری شد: ${n} ایمیل`,
       bullets:[
         "پیش‌نویس ایمیل با گیرندگان آماده می‌شود.",
-        "اولین گیرنده در To و بقیه گیرندگان در Bcc قرار می‌گیرند.",
+        "هر بار فقط ۴۰ گیرنده انتخاب می‌شود.",
         "در صورت وارد کردن نام، نام شما در پایان ایمیل اضافه می‌شود."
       ],
       previewSummary:"نمایش موضوع و متن ایمیل",
@@ -436,16 +442,16 @@ Respectfully,`,
       namePlaceholder:"Write your name here",
       nameHint:"This field is optional.",
       toggle:"🌐 FA",
+      panelMeta:(total,batch)=>`Important: ${total} emails are loaded in total. Only ${batch} recipients are selected each time to reduce the chance of being flagged as spam by email systems. If you repeat this enough times, the full list will eventually be covered. Please do not refresh or close the page while sending, otherwise the batch order will start again from the beginning.`,
 
       panelTitle:"Send email to members of the UK Parliament",
       panelGroup:"UK Parliament",
-      panelMeta:"Recipients: email list 1 • Text: message 1",
       sendBtn:"✅ Send email",
       statusLabel:"Status: ",
       loaded:(n)=>`Loaded: ${n} emails`,
       bullets:[
         "A draft email with recipients is prepared.",
-        "The first recipient goes in To and the rest go in Bcc.",
+        "Only 40 recipients are selected each time.",
         "If a name is entered, it is added at the end of the email."
       ],
       previewSummary:"Show subject and body",
@@ -460,6 +466,9 @@ Respectfully,`,
     mailFile:"mail1.txt",
     msgFile:"message1.txt",
     emails:[],
+    shuffledEmails:[],
+    batchSize:40,
+    batchIndex:0,
     subject:"",
     body:"",
     loaded:false,
@@ -487,7 +496,10 @@ Respectfully,`,
 
     document.getElementById("panelTitle").textContent = t.panelTitle;
     document.getElementById("pillLabel").textContent = t.panelGroup;
-    document.getElementById("panelMeta").textContent = t.panelMeta;
+    document.getElementById("panelMeta").textContent =
+      typeof t.panelMeta === "function"
+        ? t.panelMeta(PANEL.emails.length || 0, PANEL.batchSize)
+        : t.panelMeta;
     document.getElementById("sendBtn").textContent = t.sendBtn;
     document.getElementById("statusLabel").textContent = t.statusLabel;
     document.getElementById("previewSummary").textContent = t.previewSummary;
@@ -567,6 +579,29 @@ Respectfully,`,
     return url;
   }
 
+  function shuffleArray(arr){
+    const a = [...arr];
+    for(let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function getNextBatchEmails(){
+    if (!PANEL.shuffledEmails.length) return [];
+
+    if (PANEL.batchIndex >= PANEL.shuffledEmails.length) {
+      PANEL.shuffledEmails = shuffleArray(PANEL.emails);
+      PANEL.batchIndex = 0;
+    }
+
+    const batch = PANEL.shuffledEmails.slice(PANEL.batchIndex, PANEL.batchIndex + PANEL.batchSize);
+    PANEL.batchIndex += PANEL.batchSize;
+
+    return batch;
+  }
+
   function setPanelError(msg){
     PANEL.error = msg;
     const errEl = document.getElementById("error");
@@ -609,6 +644,9 @@ Respectfully,`,
       const [mailTxt, msgTxt] = await Promise.all([mailRes.text(), msgRes.text()]);
 
       PANEL.emails = normalizeEmails(mailTxt);
+      PANEL.shuffledEmails = shuffleArray(PANEL.emails);
+      PANEL.batchIndex = 0;
+
       const parsed = parseMessage(msgTxt);
       PANEL.subject = parsed.subject;
       PANEL.body = parsed.body;
@@ -621,13 +659,17 @@ Respectfully,`,
         recipient_count: PANEL.emails.length,
         has_subject: PANEL.subject ? 1 : 0,
         has_body: PANEL.body ? 1 : 0,
+        batch_size: PANEL.batchSize,
         page_name: "uk_campaign"
       });
 
+      setLang(LANG);
       renderPanel();
     }catch(e){
       PANEL.loaded = false;
       PANEL.emails = [];
+      PANEL.shuffledEmails = [];
+      PANEL.batchIndex = 0;
       PANEL.subject = "";
       PANEL.body = "";
       setPanelError(UI[LANG].errorPrefix + e.message);
@@ -647,8 +689,11 @@ Respectfully,`,
   document.getElementById("sendBtn").addEventListener("click", () => {
     if(!PANEL.loaded || !PANEL.emails.length) return;
 
+    const batchEmails = getNextBatchEmails();
+    if(!batchEmails.length) return;
+
     const finalBody = getSignedBody(PANEL.body);
-    const mailtoUrl = buildMailto(PANEL.emails, PANEL.subject, finalBody);
+    const mailtoUrl = buildMailto(batchEmails, PANEL.subject, finalBody);
 
     let navigated = false;
     const openMailClient = () => {
@@ -661,8 +706,11 @@ Respectfully,`,
       event_category: "email_campaign",
       event_label: "UK Parliament Send Button",
       language: LANG,
-      recipient_count: PANEL.emails.length,
+      recipient_count: batchEmails.length,
+      total_recipient_pool: PANEL.emails.length,
       has_name: document.getElementById("fullName").value.trim() ? 1 : 0,
+      batch_start_index: Math.max(PANEL.batchIndex - PANEL.batchSize, 0),
+      batch_size: PANEL.batchSize,
       page_name: "uk_campaign",
       value: 1,
       event_callback: openMailClient,
